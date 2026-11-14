@@ -1,0 +1,17 @@
+{
+  "name": "dsh-gemini-deroute",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DeepSeek-Harness plugin: rewrite the harness prompt fingerprints that make an upstream route a Gemini flagship model to a cheap flash-lite fallback, and log every observation of that fallback so the effect can be measured.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "license": "WTFPL",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

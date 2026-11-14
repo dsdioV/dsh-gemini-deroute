@@ -1,0 +1,24 @@
+# dsh-gemini-deroute layer.
+#
+# Applied only when this package is listed in the profile's
+# `dsh.profile.bundles`. The row id stays unique across the composed tree: the
+# profile's own cordis.patch.yml must NOT also insert it.
+#
+# Config (all optional):
+#   enabled: true|false        master switch; false loads the plugin but rewrites
+#                              nothing and logs nothing.
+#   rewrite: true|false        the prompt-fingerprint rewrite itself.
+#   observe: true|false        log one line per upstream reroute, warning on the
+#                              flash-lite fallback family.
+#   debug: true|false          log every rewrite hit with byte counts.
+#   modelPattern: <regex>      only rewrite for models matching this pattern, so
+#                              a DeepSeek or Claude session is untouched.
+- insert:
+    - id: gemini-deroute
+      name: dsh-gemini-deroute
+      config:
+        enabled: true
+        rewrite: true
+        observe: true
+        debug: false
+        modelPattern: 'gemini'
